@@ -1,0 +1,58 @@
+-------------------------------------------------------------------------------
+Test set: tek.capstone.framework.runner.TestRunner
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.732 s <<< FAILURE! - in tek.capstone.framework.runner.TestRunner
+Retail Order Page.Verify User can Return the order  Time elapsed: 0.051 s  <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'User click on Return Items button' and 3 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@When("User click on Return Items button")
+public void userClickOnReturnItemsButton() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("User select the Return Reason {string}")
+public void userSelectTheReturnReason(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("User select the drop off service {string}")
+public void userSelectTheDropOffService(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("User click on Return Order button")
+public void userClickOnReturnOrderButton() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Retail Order Page.Verify User can write a review on order placed  Time elapsed: 0.019 s  <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'User click on Review button' and 3 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@When("User click on Review button")
+public void userClickOnReviewButton() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("User write Review headline {string} and {string}")
+public void userWriteReviewHeadlineAnd(String string, String string2) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("User click Add your Review button")
+public void userClickAddYourReviewButton() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("a review message should be displayed {string}")
+public void aReviewMessageShouldBeDisplayed(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+

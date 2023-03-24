@@ -1,3 +1,4 @@
+
 Feature: Retail Home Page
 
   Scenario: Verify Shop by Department sidebar
@@ -6,7 +7,7 @@ Feature: Retail Home Page
     Then below options are present in Shop by Department sidebar
       | Electronics | Computers | Smart Home | Sports | Automative |
 
-  
+  @all
   Scenario Outline: Verify department sidebar options
     Given User is on retail website
     When User click on All section
@@ -61,7 +62,7 @@ Feature: Retail Home Page
     And User click Add a credit card or Debit Card for Payment method
     And User fill Debit or credit card information
       | cardNumber       | nameOnCard | expirationMonth | expirationYear | securityCode |
-      | 4000123485671050 | Carlos     |              11 |           2026 |          123 |
+      | 4000123485670000 | Carlos     |              11 |           2026 |          123 |
     And User click on Add your card button
     And User click on Place Your Order
     Then a message should be displayed 'Order Placed, Thanks'

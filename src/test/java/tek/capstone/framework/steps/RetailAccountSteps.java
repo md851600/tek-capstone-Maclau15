@@ -46,32 +46,9 @@ public class RetailAccountSteps extends CommonUtility {
 		Assert.assertTrue(isElementDisplayed(factory.AccountPage().personalInfoUpdatedSuccessMessage));
 		logger.info("user profile information Update");
 
-	// updated password
+		// add payment
 	}
 
-	@When("User enter below information")
-	public void userEnterBelowInformation(DataTable dataTable) {
-		List<Map<String, String>> changePasswInformation = dataTable.asMaps(String.class, String.class);
-		sendText(factory.AccountPage().previousPasswField, DataGeneratorUtility.credentials(changePasswInformation.get(0).get("previousPassword")));
-		sendText(factory.AccountPage().NewPaswordField, DataGeneratorUtility.credentials(changePasswInformation.get(0).get("newPassword")));
-		sendText(factory.AccountPage().confirmPassword, DataGeneratorUtility.credentials(changePasswInformation.get(0).get("confirmPassword")));
-		logger.info("user filled the new Password information form");
-	}
-	
-	@When("User click on Change Password button")
-	public void userClickOnChangePasswordButton() {
-		click(factory.AccountPage().changePasswButton);
-		logger.info("user clicked on change password Button");
-
-	}
-
-	@Then("a message should be displayed ‘Password Updated Successfully’")
-	public void aMessageShouldBeDisplayedPasswordUpdatedSuccessfully() {
-		Assert.assertTrue(isElementDisplayed(factory.AccountPage().passwordUpdatedSuccessfully));
-		logger.info("user is login into account page");
-	}
-
-	// add payment
 	@When("User click on Add a payment method link")
 	public void userClickOnAddAPaymentMethodLink() {
 		click(factory.AccountPage().addPaymentMethodButton);
@@ -135,7 +112,6 @@ public class RetailAccountSteps extends CommonUtility {
 		logger.info("user click on Update Your Card button");
 	}
 
-	
 	// @RemoveDebitCard
 	@When("User click on remove option of card section")
 	public void userClickOnRemoveOptionOfCardSection() {
@@ -194,12 +170,12 @@ public class RetailAccountSteps extends CommonUtility {
 		if (expectedMessage.contains("Address Updated")) {
 			waitTillPresence(factory.AccountPage().addressUpdatedSuccessfully);
 			Assert.assertEquals(expectedMessage, factory.AccountPage().addressUpdatedSuccessfully.getText());
-			
-		} else if (expectedMessage.contains("Payment Method updated Successfully")){
+
+		} else if (expectedMessage.contains("Payment Method updated Successfully")) {
 			waitTillPresence(factory.AccountPage().paymentMethodUpdatedSuccessfully);
 			Assert.assertEquals(expectedMessage, factory.AccountPage().paymentMethodUpdatedSuccessfully.getText());
 		}
-		
+
 	}
 
 	// @EditAddres
@@ -214,9 +190,9 @@ public class RetailAccountSteps extends CommonUtility {
 		click(factory.AccountPage().addYourAddressButton);
 		logger.info("User clicked update Your Address button");
 	}
-	
+
 	// @RemoveAddress
-	
+
 	@When("User click on remove option of Address section")
 	public void userClickOnRemoveOptionOfAddressSection() throws InterruptedException {
 		click(factory.AccountPage().removeAddressButton);
@@ -227,8 +203,29 @@ public class RetailAccountSteps extends CommonUtility {
 	public void addressDetailsShouldBeRemoved() {
 		Assert.assertTrue(isElementDisplayed(factory.AccountPage().addAddressLogo));
 		logger.info("Address details has been removed");
-		
+
+		// updated password
+	}
+
+	@When("User enter below information")
+	public void userEnterBelowInformation(DataTable dataTable) {
+		List<Map<String, String>> changePasswInformation = dataTable.asMaps(String.class, String.class);
+		sendText(factory.AccountPage().previousPasswField, changePasswInformation.get(0).get("previousPassword"));
+		sendText(factory.AccountPage().NewPaswordField, changePasswInformation.get(0).get("newPassword"));
+		sendText(factory.AccountPage().confirmPassword, changePasswInformation.get(0).get("confirmPassword"));
+		logger.info("user filled the new Password information form");
+	}
+
+	@When("User click on Change Password button")
+	public void userClickOnChangePasswordButton() {
+		click(factory.AccountPage().changePasswButton);
+		logger.info("user clicked on change password Button");
 
 	}
 
+	@Then("a message should be displayed ‘Password Updated Successfully’")
+	public void aMessageShouldBeDisplayedPasswordUpdatedSuccessfully() {
+		Assert.assertTrue(isElementDisplayed(factory.AccountPage().passwordUpdatedSuccessfully));
+		logger.info("user is login into account page");
+	}
 }

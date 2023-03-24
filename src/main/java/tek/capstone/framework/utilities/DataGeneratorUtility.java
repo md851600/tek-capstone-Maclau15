@@ -29,7 +29,7 @@ public class DataGeneratorUtility {
 		}else if (input.equals("lastName")){
 			outPut = faker.name().lastName();
 		}else if (input.equals("email")){
-			outPut = faker.name().firstName() + "." + faker.name().lastName() + "@tekschool.us";
+			outPut = faker.expression("#{letterify '????.????@tekschool.us'}");
 		}else if (input.equals("phoneNumber")){
 			outPut = faker.phoneNumber().cellPhone();
 		}else if (input.equals("fullName")){
@@ -52,25 +52,7 @@ public class DataGeneratorUtility {
 			outPut = faker.expression("");	
 		}return outPut;
 }
-	public static String credentials(String input) {
-
-		String email = "Jsmith15@gmail.com";
-		String res = "";
-		String password = "Tek/123458";
-		String newPassword = "Tek/12345";
-
-		if (input.equals("email")) {
-			res = email;
-		} else if (input.equals("password") || input.equals("previousPassword")) {
-			res = password;
-
-		} else if (input.equals("newPassword") || input.equals("confirmPassword")) {
-			res = newPassword;
-
-		}
-		return res;
-
-	}
+	
 
 	}
 
